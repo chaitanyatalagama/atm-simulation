@@ -1,4 +1,5 @@
 #ATM simulation using Python
+# Function to check user login using PIN
 def login(account):
     attempts = 3
     while attempts > 0:
@@ -12,11 +13,11 @@ def login(account):
     print("Too many failed attempts. Exiting...") #if attempts greater than 3
     return False
 
-
+# Function to check user balance
 def check_balance(account):
     print(f"\nCurrent Balance: ₹{account['balance']}")
 
-
+# Function to deposit the amount
 def deposit(account):
     try:
         amount = float(input("Enter amount to deposit: ₹"))
@@ -29,7 +30,7 @@ def deposit(account):
     except ValueError:
         print("Enter a valid number!") #if values other than numbers are given as input
 
-
+# Function to withdraw the amount
 def withdraw(account, limit=5000):
     try:
         amount = float(input("Enter amount to withdraw: ₹"))
@@ -51,7 +52,7 @@ def withdraw(account, limit=5000):
     except ValueError:
         print("Enter a valid number!")
 
-
+# Function to check the history
 def show_history(account):
     print("\nTransaction History:")
     if not account["history"]: #Checks if the history list is empty(is yes prints the statement)
